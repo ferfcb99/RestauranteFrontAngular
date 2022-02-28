@@ -1,0 +1,11 @@
+.background__nav{
+    background-color: #00B4D8;
+    .nav{
+        .lista{
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+        }
+    }
+}
+
