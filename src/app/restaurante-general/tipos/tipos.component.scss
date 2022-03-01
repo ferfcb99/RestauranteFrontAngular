@@ -1,0 +1,42 @@
+.fieldset{
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    border-radius: 1rem;
+    .botones{
+        button{
+            width: 100%;
+            padding: 1rem;
+            background-color: #90E0EF;
+            border: 1px solid #90E0EF;
+            border-radius: 1rem;   
+            &:hover{
+                background: #CAF0F8;
+                border: 1px solid #90E0EF;
+                transition: 0.5s ease all;
+            }         
+        }
+    }
+}
+
+.campos{
+    .campo{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;     
+        input{
+            padding: 1rem;
+            border: 1px solid #e1e1e1;
+            border-radius: 1rem;
+        }   
+    }
+}
+
+@media(min-width: 768px){
+    .forms{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+}

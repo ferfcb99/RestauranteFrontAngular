@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TiposComponent } from './tipos/tipos.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { PlatillosComponent } from './platillos/platillos.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +19,9 @@ import { PlatillosComponent } from './platillos/platillos.component';
     PlatillosComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class RestauranteGeneralModule { }

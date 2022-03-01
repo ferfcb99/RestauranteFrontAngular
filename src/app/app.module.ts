@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RestauranteGeneralModule } from './restaurante-general/restaurante-general.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { RestauranteGeneralModule } from './restaurante-general/restaurante-gene
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RestauranteGeneralModule
+    RestauranteGeneralModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

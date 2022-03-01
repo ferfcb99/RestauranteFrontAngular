@@ -3,13 +3,58 @@
         <thead>
             <th> ID </th>
             <th> Nombre </th>
-
+            <th>
+               Accion
+            </th>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Vegana</td>
+            <tr *ngFor="let tipo of tipos; let i = index"> <!-- 0 1 2 3 4 -->
+                <td>{{i + 1}}</td>
+                <td>{{tipo.nombre}}</td>
+                <td>
+                    <button>Editar</button>
+                    <button>Eliminar</button>
+                </td>
             </tr>
         </tbody>
     </table>
+</div>
+
+<div class="container-90">
+    <div class="forms">
+        <form class="formulario" [formGroup]="tipoForm" (ngSubmit)="registrar()">       
+            <fieldset class="fieldset">
+                <legend class="legend">
+                    Registra un nuevo tipo
+                </legend>
+                <div class="campos">
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" formControlName="nombre" placeholder="nombre">
+                    </div>
+                </div>
+                <div class="botones">
+                    <button>Enviar</button>
+                </div>
+            </fieldset>
+        </form>
+        <div class="actualizar">
+            <form class="formulario" [formGroup]="tipoForm" (ngSubmit)="registrar()">       
+                <fieldset class="fieldset">
+                    <legend class="legend">
+                        Registra un nuevo tipo
+                    </legend>
+                    <div class="campos">
+                        <div class="campo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" formControlName="nombre" placeholder="nombre">
+                        </div>
+                    </div>
+                    <div class="botones">
+                        <button>Enviar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 </div>
