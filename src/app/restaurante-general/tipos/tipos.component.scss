@@ -33,6 +33,36 @@
     }
 }
 
+.actions{
+    display: flex;
+    column-gap: 1rem;
+}
+
+.action{
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.action-yellow{
+    background-color: #FFC300;
+    &:hover{
+        background-color: #fff1c2;
+    }
+}
+
+.action-red{
+    background-color: red;
+    color: #ffffff;
+    &:hover{
+        background-color: rgb(245, 127, 127);
+        color: black;
+    }
+}
+
 @media(min-width: 768px){
     .forms{
         display: grid;
@@ -40,3 +70,4 @@
         gap: 3rem;
     }
 }
+

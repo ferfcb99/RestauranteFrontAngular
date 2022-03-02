@@ -16,9 +16,7 @@ export class TiposComponent implements OnInit{
 
   tipos: Tipo[];
 
-  get tipo(){
-    return this.tipoForm.controls;
-  }
+  tipo: Tipo = new Tipo();
 
   // formulario reactivo
   tipoForm: FormGroup;
@@ -28,12 +26,33 @@ export class TiposComponent implements OnInit{
       id: [''],
       nombre: ['', [Validators.required, Validators.maxLength(100), Validators.minLength(1)]]
     });
-
-
     this.listarTipos();
-    
   }
 
+  validaTipoParaActualizar(): boolean{
+    return !(this.tipo.id > 0 && this.tipo.nombre.length > 0);
+  }
+
+  actualizar(): void{
+    this.tipoService.actualizar(this.tipo, this.tipo.id).subscribe(respuesta =>{
+      this.listarTipos();
+      Swal.fire(
+        "Actualizado",
+        "Actualizado exitosamente",
+        "success"
+      );
+    }, error =>{
+      Swal.fire("Error", `No Actualizado ${error}`, "error");
+    })
+  }
+
+  obtenerPorId(id: number): void{
+
+    this.tipoService.obtenerPorId(id).subscribe(respuesta =>{
+      this.tipo = respuesta.body;
+    })
+
+  }
 
   registrar(): void{
     this.tipoService.crear(this.tipoForm.value).subscribe(respuesta =>{
@@ -48,11 +67,19 @@ export class TiposComponent implements OnInit{
     })
   }
 
+  eliminar(id: number): void{
+    this.tipoService.eliminarPorId(id).subscribe(respuesta =>{
+      this.listarTipos();
+      Swal.fire("Eliminado", "Eliminado de forma exitosa", "info");
+    }, error =>{
+      Swal.fire("Error", `No eliminado ${error}`, "error");
+      console.log(error);
+    });
+  }
 
   listarTipos(): void{
     this.tipoService.obtenerTodos().subscribe(respuesta =>{
       this.tipos = respuesta.body;
-      console.log(this.tipos);
     }, error => {
       console.log(error);
     });

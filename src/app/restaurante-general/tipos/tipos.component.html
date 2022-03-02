@@ -11,9 +11,9 @@
             <tr *ngFor="let tipo of tipos; let i = index"> <!-- 0 1 2 3 4 -->
                 <td>{{i + 1}}</td>
                 <td>{{tipo.nombre}}</td>
-                <td>
-                    <button>Editar</button>
-                    <button>Eliminar</button>
+                <td class="actions">
+                    <button class="action action-yellow" (click)="obtenerPorId(tipo.id)">Editar</button>
+                    <button class="action action-red" (click)="eliminar(tipo.id)" >Eliminar</button>
                 </td>
             </tr>
         </tbody>
@@ -21,7 +21,7 @@
 </div>
 
 <div class="container-90">
-    <div class="forms">
+    <div class="forms mtb-2r">
         <form class="formulario" [formGroup]="tipoForm" (ngSubmit)="registrar()">       
             <fieldset class="fieldset">
                 <legend class="legend">
@@ -38,20 +38,20 @@
                 </div>
             </fieldset>
         </form>
-        <div class="actualizar">
-            <form class="formulario" [formGroup]="tipoForm" (ngSubmit)="registrar()">       
+        <div class="actualizar mtb-2r">
+            <form class="formulario" (ngSubmit)="actualizar()">       
                 <fieldset class="fieldset">
                     <legend class="legend">
-                        Registra un nuevo tipo
+                        Actualiza un tipo existente
                     </legend>
                     <div class="campos">
                         <div class="campo">
                             <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" formControlName="nombre" placeholder="nombre">
+                            <input type="text" id="nombre" placeholder="nuevo nombre" name="nombre"  [(ngModel)]="tipo.nombre">
                         </div>
                     </div>
                     <div class="botones">
-                        <button>Enviar</button>
+                        <button [disabled]="validaTipoParaActualizar()">Actualizar</button>
                     </div>
                 </fieldset>
             </form>
