@@ -1,0 +1,50 @@
+.card{
+    margin: 2rem 0;
+    background-color: #EEEEEE;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    .imagen{
+
+        img{
+            max-width: 100%;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 1rem;
+        }
+    }
+
+    .detalles__platillo{
+
+        .boton{
+            margin-top: 2rem;
+            button{
+                background-color: #90E0EF;
+                border: none;
+                padding: 1rem;
+                border-radius: 1rem;
+                width: 100%;
+                &:hover{
+                    cursor: pointer;
+                    background-color: #CAF0F8;
+                    transition: 0.4s ease all;
+                }
+            }
+        }
+    }
+
+}
+
+
+.descripcion{
+    display: flex;
+    flex-direction: column;
+
+    b{
+        color: red;
+        align-self: flex-end;
+    }
+}
