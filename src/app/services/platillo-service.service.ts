@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { GeneralCrudInterface } from '../interfaces/GeneralCrudInterface';
@@ -9,11 +10,14 @@ import { Response } from '../models/public/Response.dto';
 })
 export class PlatilloServiceService implements GeneralCrudInterface<Platillo>{
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
+  baseURL: string = "http://localhost:8084/api/v1";
+  controladorURL: string = "/platillos";
   
+  // http://localhost:8084/api/v1/platillos
   obtenerTodos(): Observable<Response<Platillo[]>> {
-    return this.httpClient.get<Response<Platillo[]>>("url");
+    return this.httpClient.get<Response<Platillo[]>>(`${this.baseURL}${this.controladorURL}/platillos`);
   }
   obtenerPorId(id: number): Observable<Response<Platillo>> {
     throw new Error('Method not implemented.');

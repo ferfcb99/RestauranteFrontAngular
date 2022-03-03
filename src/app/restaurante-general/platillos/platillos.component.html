@@ -1,3 +1,25 @@
 <div class="container-90">
-    Hola mundo
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Tamaño</th>
+            <th>Precio</th>
+            <!-- tr table row
+                th 
+                td
+            -->
+           <th>Accion</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let platillo of platillos; let indicePlatillo = index">
+                <td>{{indicePlatillo + 1}}</td>
+                <td>{{platillo.nombre}}</td>
+                <td>{{platillo.precio}}</td>
+                <td>
+                    <button>Editar</button>
+                    <button>Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
