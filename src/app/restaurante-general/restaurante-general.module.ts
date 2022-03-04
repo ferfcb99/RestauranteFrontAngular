@@ -4,6 +4,7 @@ import { TiposComponent } from './tipos/tipos.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { PlatillosComponent } from './platillos/platillos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CrudPlatilloComponent } from './crud-platillo/crud-platillo.component';
 
 
 
@@ -11,12 +12,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     TiposComponent,
     RestaurantesComponent,
-    PlatillosComponent
+    PlatillosComponent,
+    CrudPlatilloComponent
   ],
   exports: [
     TiposComponent,
     RestaurantesComponent,
-    PlatillosComponent
+    PlatillosComponent,
+    CrudPlatilloComponent
   ],
   imports: [
     CommonModule,

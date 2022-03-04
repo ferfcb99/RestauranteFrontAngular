@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { Platillo } from 'src/app/models/dto/Platillo.dto';
 import { Restaurante } from 'src/app/models/dto/Restaurante.dto';
 import { Tipo } from 'src/app/models/dto/Tipo.dto';
@@ -13,7 +14,8 @@ import Swal from 'sweetalert2';
 })
 export class PlatillosComponent implements OnInit {
 
-  constructor(private platilloService: PlatilloServiceService) { }
+  constructor(private platilloService: PlatilloServiceService,
+    private router: Router) { }
 
   platillo: Platillo = new Platillo();
 
@@ -37,6 +39,11 @@ export class PlatillosComponent implements OnInit {
 
     this.listarPlatillos();
     
+  }
+
+
+  irAFormularioDeAgregar(): void{
+    this.router.navigate(['/registrarPlatillo']);
   }
 
 

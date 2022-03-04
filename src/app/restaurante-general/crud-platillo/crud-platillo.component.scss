@@ -1,0 +1,21 @@
+.fieldset{
+    padding: 1rem;
+}
+
+.campos{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    .campo{
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+    }
+
+    .cajas{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+}

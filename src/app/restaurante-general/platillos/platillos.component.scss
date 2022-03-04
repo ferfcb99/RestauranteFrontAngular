@@ -48,3 +48,20 @@
         align-self: flex-end;
     }
 }
+
+.boton__registrar{
+    margin-top: 2rem; 
+    background-color: #00B4D8; 
+    color: white; 
+    border: 1px solid #00B4D8; 
+    padding: 1rem; 
+    border-radius: 0.7rem; 
+    width: 100%;
+
+    &:hover{
+        cursor: pointer;
+        background-color: #90E0EF;
+        transition: 0.3s ease all;
+        color: black;
+    }
+}

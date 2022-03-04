@@ -1,0 +1,40 @@
+<div class="container-90">
+    <form>
+        <fieldset class="fieldset">
+            <legend>
+                Registra tu platillo
+            </legend>
+            <div class="campos">
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" placeholder="nombre platillo" name="nombre" [(ngModel)]="platillo.nombre">
+                </div>
+                <div class="campo">
+                    <label for="precio">Precio</label>
+                    <input type="number" placeholder="precio platillo" name="precio" [(ngModel)]="platillo.precio">
+                </div>
+                <div class="campo">
+                    <label for="tamano">Tamaño</label>
+                    <input type="text" placeholder="tamano platillo" name="tamano" [(ngModel)]="platillo.tamano">
+                </div>
+                <div class="cajas">
+                    <div class="caja">
+                        <select name="nombre" [ngModel]="platillo.restaurante.nombre">
+                            <ng-container *ngFor="let restaurante of restaurantes; let indice = index">
+                                <option value={{restaurante.id}}>{{restaurante.nombre}}</option>
+                            </ng-container>
+                        </select>
+                    </div>
+                    <div class="caja">
+                        <select name="" id="">
+                            <ng-container *ngFor="let tipo of tipos; let indice = index">
+                                <option>{{tipo.nombre}}</option>
+                            </ng-container>
+                        </select>
+                    </div>
+                </div>
+                <button (click)="enviar()">Enviar</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
